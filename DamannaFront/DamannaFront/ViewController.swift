@@ -6,77 +6,21 @@
 //
 
 import UIKit
-import StompClientLib
 
-class ViewController: UIViewController, StompClientLibDelegate {
-
-    let url = NSURL(string: "wss://test-message2.herokuapp.com/ws/websocket")
-    let intervalSec = 1.0
-    public var socketClient = StompClientLib()
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("1")
-        socketClient.openSocketWithURLRequest(request: NSURLRequest(url: url! as URL), delegate: self)
-        print("2")
-        print("\(socketClient)")
-        print("3")
-    }
+class ViewController: UIViewController {
     
-    @IBOutlet var welcomeLabel: UILabel!
+    @IBOutlet var userName: UITextField!
+    @IBOutlet var inputName: UILabel!
     
-    struct test {
-        var content: String? = ""
-        var sender: String? = ""
+    // MARK:- 이름 전달 
+    // Action Seguway 방식으로 입력받은 이름 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination
         
-        var dictionary : [String: Any]{
-            return ["sender" : sender!, "type" : "JOIN"]
+        guard let rvc = dest as? RoomSelect else {
+            return
         }
         
-        var nsDictionary : NSDictionary{
-            return dictionary as NSDictionary
-        }
+        rvc.userName = self.userName.text!
     }
-    
-    @IBAction func submitButton(_ sender: Any) {
-        
-        let sendPath = "/app/chat.addUser"
-        let tt = test(content: "abc", sender: "jason")
-        
-        socketClient.sendJSONForDict(dict: tt.nsDictionary, toDestination: sendPath)
-        
-    }
-    
-    func stompClient(client: StompClientLib!, didReceiveMessageWithJSONBody jsonBody: AnyObject?, akaStringBody stringBody: String?, withHeader header: [String : String]?, withDestination destination: String) {
-        print("Destination : \(destination)")
-        print("JSON Body : \(String(describing: jsonBody))")
-        print("String Body : \(stringBody ?? "nil")")
-    }
-    
-    func stompClientDidDisconnect(client: StompClientLib!) {
-        print("Socket is Disconnected")
-    }
-    
-    func stompClientDidConnect(client: StompClientLib!) {
-        print("Socket is connected")
-        socketClient.subscribe(destination: "/topic/apple")
-    }
-    
-    func serverDidSendReceipt(client: StompClientLib!, withReceiptId receiptId: String) {
-        print("Receipt : \(receiptId)")
-    }
-    
-    func serverDidSendError(client: StompClientLib!, withErrorMessage description: String, detailedErrorMessage message: String?) {
-        print("Error Send : \(String(describing: message))")
-        if(!socketClient.isConnected()) {
-           // reconnect()
-        }
-    }
-    
-    func serverDidSendPing() {
-        print("Server ping")
-    }
-    
-
 }
