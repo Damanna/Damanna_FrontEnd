@@ -12,6 +12,10 @@ class ViewController: UIViewController {
     @IBOutlet var userName: UITextField!
     @IBOutlet var inputName: UILabel!
     
+    override func viewDidLoad() {
+        self.userName.becomeFirstResponder()
+    }
+    
     // MARK:- 이름 전달 
     // Action Seguway 방식으로 입력받은 이름 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
