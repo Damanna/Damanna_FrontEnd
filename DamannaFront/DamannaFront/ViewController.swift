@@ -16,8 +16,8 @@ class ViewController: UIViewController {
         self.userName.becomeFirstResponder()
     }
     
-    // MARK:- 이름 전달 
-    // Action Seguway 방식으로 입력받은 이름 전달
+    // MARK:- 이름 전달
+    // Submit 버튼 누를 때 Action Seguway 방식으로 입력받은 이름 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination
         

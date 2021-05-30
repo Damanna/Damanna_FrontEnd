@@ -52,7 +52,7 @@ class ChatRoom: UIViewController, StompClientLibDelegate, UITextFieldDelegate {
     
     
    
-    // MARK:- Stomp 시작 
+    // MARK: Stomp 시작
     // json 형식으로 data 전달을 위한 구조체
     struct test : Codable {
         var content: String? = ""
@@ -79,6 +79,13 @@ class ChatRoom: UIViewController, StompClientLibDelegate, UITextFieldDelegate {
         
         print("Destination : \(destination)")
         print("JSON Body : \(String(describing: jsonBody))")
+        
+        var userName: String = ""
+        if let name = jsonBody?["sender"] as? String {
+            userName = name
+        }
+        print(userName)
+        
         print("String Body : \(stringBody ?? "nil")")
     }
     
