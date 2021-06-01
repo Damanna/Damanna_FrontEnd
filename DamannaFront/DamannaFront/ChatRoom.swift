@@ -13,7 +13,7 @@ class ChatRoom: UIViewController, StompClientLibDelegate, UITextFieldDelegate {
     // Stomp로 웹소켓 서버 연결을 위한 metadata
     let url = NSURL(string: "wss://damanna.herokuapp.com/ws/websocket")
     let intervalSec = 1.0
-    let roomID:String = "abc"
+    var roomID: String = "asd"
     public var socketClient = StompClientLib()
     
     // RoomSelect에서 채팅방 주제를 전달받기 위한 프로퍼티
@@ -25,6 +25,7 @@ class ChatRoom: UIViewController, StompClientLibDelegate, UITextFieldDelegate {
     // 뷰가 메모리에 로드될 때 stomp client에서 연결 시작 및 초기 설정
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         print("1")
         socketClient.openSocketWithURLRequest(request: NSURLRequest(url: url! as URL), delegate: self)
         print("2")
@@ -36,6 +37,9 @@ class ChatRoom: UIViewController, StompClientLibDelegate, UITextFieldDelegate {
         
         // TextField Delegation
         self.userMessage.delegate = self
+        
+        // subscribe 할 때 사용자가 선택한 방 이름 전송
+        roomID = roomTopic
     }
     
     // return key 누르면 키보드 사라지게
@@ -54,7 +58,8 @@ class ChatRoom: UIViewController, StompClientLibDelegate, UITextFieldDelegate {
    
     // MARK: Stomp 시작
     // json 형식으로 data 전달을 위한 구조체
-    struct test : Codable {
+    struct chatMessage : Codable {
+        var type: String? = ""
         var content: String? = ""
         var sender: String? = ""
         
@@ -69,8 +74,9 @@ class ChatRoom: UIViewController, StompClientLibDelegate, UITextFieldDelegate {
     
     // MARK:- 사용자 이름 및 접속하려는 roomID 전달
     @IBAction func submitButton(_ sender: Any) {
-        let sendPath = "/app/chat/addUser/"  + roomID// + topic (입력받은 값)
-        let tt = test(sender: "jason")
+        
+        let sendPath = "/app/chat/sendMessage/" + roomID
+        let tt = chatMessage(sender: "jason")
         
         socketClient.sendJSONForDict(dict: tt.nsDictionary, toDestination: sendPath)
     }
@@ -95,6 +101,7 @@ class ChatRoom: UIViewController, StompClientLibDelegate, UITextFieldDelegate {
     
     func stompClientDidConnect(client: StompClientLib!) {
         print("Socket is connected")
+        print(roomTopic)
         socketClient.subscribe(destination: "/topic/" + roomID)
     }
     
