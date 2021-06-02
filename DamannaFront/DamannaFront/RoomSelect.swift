@@ -9,7 +9,6 @@ import UIKit
 
 class RoomSelect: UITableViewController {
     
-    var userName: String = ""
     var roomList = [String]()
     var topic: String = ""
     
@@ -19,7 +18,6 @@ class RoomSelect: UITableViewController {
     }
     
     override func viewDidLoad() {
-        print(userName)
         
         let url: URL! = URL(string: "https://damanna.herokuapp.com/room/read")
         let dbData = try! Data(contentsOf: url)
@@ -145,7 +143,11 @@ class RoomSelect: UITableViewController {
         topic = roomList[indexPath.row]
         
         // Segueway 실제 이동
-        performSegue(withIdentifier: "moveToChatRoom", sender: self)
+        // performSegue(withIdentifier: "moveToChatRoom", sender: self)
+        
+        let vc = ChatViewContoller()
+        vc.roomTopic = self.topic
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

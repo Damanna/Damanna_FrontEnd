@@ -19,12 +19,9 @@ class ViewController: UIViewController {
     // MARK:- 이름 전달
     // Submit 버튼 누를 때 Action Seguway 방식으로 입력받은 이름 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination
-        
-        guard let rvc = dest as? RoomSelect else {
-            return
-        }
-        
-        rvc.userName = self.userName.text!
+        // AppDelegate 저장소 이용해서 userName 저장 
+        let ad = UIApplication.shared.delegate as? AppDelegate
+        ad?.name = self.userName.text!
     }
+    
 }
