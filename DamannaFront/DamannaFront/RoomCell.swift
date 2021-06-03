@@ -10,5 +10,6 @@ import UIKit
 class RoomCell: UITableViewCell {
     
     @IBOutlet var Topic: UILabel!
+    @IBOutlet var roomTag: UILabel!
     
 }
