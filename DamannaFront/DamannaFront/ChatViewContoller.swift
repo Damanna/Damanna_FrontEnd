@@ -152,7 +152,7 @@ extension ChatViewContoller: StompClientLibDelegate {
             messages.append(Message(sender: otherUser,
                                     messageId: "1",
                                     sentDate: Date(),
-                                    kind: .text(receivedContent)))
+                                    kind: .text("Name: \(receivedName)\n\(receivedContent)")))
         }
         
         self.messagesCollectionView.reloadData()
