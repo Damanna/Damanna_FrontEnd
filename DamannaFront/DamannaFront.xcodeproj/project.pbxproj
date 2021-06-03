@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		620BAEB4265FCB39004F7AC1 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620BAEB3265FCB39004F7AC1 /* RoomCell.swift */; };
+		624A36DA266753E700D5B171 /* ChatViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624A36D9266753E700D5B171 /* ChatViewContoller.swift */; };
+		624AD5B6265D06D20029C7E7 /* RoomSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624AD5B5265D06D20029C7E7 /* RoomSelect.swift */; };
+		624AD5BC265D11170029C7E7 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624AD5BB265D11170029C7E7 /* ChatRoom.swift */; };
+		62857D93265643A600173CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62857D92265643A600173CCF /* AppDelegate.swift */; };
+		62857D95265643A600173CCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62857D94265643A600173CCF /* SceneDelegate.swift */; };
+		62857D97265643A600173CCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62857D96265643A600173CCF /* ViewController.swift */; };
+		62857D9A265643A600173CCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62857D98265643A600173CCF /* Main.storyboard */; };
+		62857D9C265643A700173CCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62857D9B265643A700173CCF /* Assets.xcassets */; };
+		62857D9F265643A700173CCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62857D9D265643A700173CCF /* LaunchScreen.storyboard */; };
+		74A34F82E4CBCBFFCF615628 /* Pods_DamannaFront.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FE2FEC6BD24BE7F640274B /* Pods_DamannaFront.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1457192B7040EDC41FDA8F20 /* Pods-DamannaFront.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DamannaFront.debug.xcconfig"; path = "Target Support Files/Pods-DamannaFront/Pods-DamannaFront.debug.xcconfig"; sourceTree = "<group>"; };
+		620BAEB3265FCB39004F7AC1 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
+		624A36D9266753E700D5B171 /* ChatViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewContoller.swift; sourceTree = "<group>"; };
+		624AD5B5265D06D20029C7E7 /* RoomSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomSelect.swift; sourceTree = "<group>"; };
+		624AD5BB265D11170029C7E7 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		62857D8F265643A600173CCF /* DamannaFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DamannaFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		62857D92265643A600173CCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		62857D94265643A600173CCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		62857D96265643A600173CCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		62857D99265643A600173CCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		62857D9B265643A700173CCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		62857D9E265643A700173CCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		62857DA0265643A700173CCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3FE2FEC6BD24BE7F640274B /* Pods_DamannaFront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DamannaFront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDDFAD8D3275CDFE42591372 /* Pods-DamannaFront.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DamannaFront.release.xcconfig"; path = "Target Support Files/Pods-DamannaFront/Pods-DamannaFront.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		62857D8C265643A600173CCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74A34F82E4CBCBFFCF615628 /* Pods_DamannaFront.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		015EB07AE589BAB044583EC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1457192B7040EDC41FDA8F20 /* Pods-DamannaFront.debug.xcconfig */,
+				FDDFAD8D3275CDFE42591372 /* Pods-DamannaFront.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		62857D86265643A600173CCF = {
+			isa = PBXGroup;
+			children = (
+				62857D91265643A600173CCF /* DamannaFront */,
+				62857D90265643A600173CCF /* Products */,
+				015EB07AE589BAB044583EC4 /* Pods */,
+				69CED1E242DB435F00DAB9D9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		62857D90265643A600173CCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				62857D8F265643A600173CCF /* DamannaFront.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		62857D91265643A600173CCF /* DamannaFront */ = {
+			isa = PBXGroup;
+			children = (
+				62857D92265643A600173CCF /* AppDelegate.swift */,
+				62857D94265643A600173CCF /* SceneDelegate.swift */,
+				62857D96265643A600173CCF /* ViewController.swift */,
+				62857D98265643A600173CCF /* Main.storyboard */,
+				62857D9B265643A700173CCF /* Assets.xcassets */,
+				62857D9D265643A700173CCF /* LaunchScreen.storyboard */,
+				62857DA0265643A700173CCF /* Info.plist */,
+				624AD5B5265D06D20029C7E7 /* RoomSelect.swift */,
+				624AD5BB265D11170029C7E7 /* ChatRoom.swift */,
+				620BAEB3265FCB39004F7AC1 /* RoomCell.swift */,
+				624A36D9266753E700D5B171 /* ChatViewContoller.swift */,
+			);
+			path = DamannaFront;
+			sourceTree = "<group>";
+		};
+		69CED1E242DB435F00DAB9D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3FE2FEC6BD24BE7F640274B /* Pods_DamannaFront.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		62857D8E265643A600173CCF /* DamannaFront */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62857DA3265643A700173CCF /* Build configuration list for PBXNativeTarget "DamannaFront" */;
+			buildPhases = (
+				83BE8221BAF50DD24C13DF9D /* [CP] Check Pods Manifest.lock */,
+				62857D8B265643A600173CCF /* Sources */,
+				62857D8C265643A600173CCF /* Frameworks */,
+				62857D8D265643A600173CCF /* Resources */,
+				CD466D0EA953BCA31DAC6C86 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DamannaFront;
+			productName = DamannaFront;
+			productReference = 62857D8F265643A600173CCF /* DamannaFront.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		62857D87265643A600173CCF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					62857D8E265643A600173CCF = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 62857D8A265643A600173CCF /* Build configuration list for PBXProject "DamannaFront" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 62857D86265643A600173CCF;
+			productRefGroup = 62857D90265643A600173CCF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				62857D8E265643A600173CCF /* DamannaFront */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		62857D8D265643A600173CCF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62857D9F265643A700173CCF /* LaunchScreen.storyboard in Resources */,
+				62857D9C265643A700173CCF /* Assets.xcassets in Resources */,
+				62857D9A265643A600173CCF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		83BE8221BAF50DD24C13DF9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DamannaFront-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD466D0EA953BCA31DAC6C86 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DamannaFront/Pods-DamannaFront-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DamannaFront/Pods-DamannaFront-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DamannaFront/Pods-DamannaFront-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		62857D8B265643A600173CCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				624AD5BC265D11170029C7E7 /* ChatRoom.swift in Sources */,
+				624AD5B6265D06D20029C7E7 /* RoomSelect.swift in Sources */,
+				620BAEB4265FCB39004F7AC1 /* RoomCell.swift in Sources */,
+				62857D97265643A600173CCF /* ViewController.swift in Sources */,
+				62857D93265643A600173CCF /* AppDelegate.swift in Sources */,
+				62857D95265643A600173CCF /* SceneDelegate.swift in Sources */,
+				624A36DA266753E700D5B171 /* ChatViewContoller.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		62857D98265643A600173CCF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				62857D99265643A600173CCF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		62857D9D265643A700173CCF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				62857D9E265643A700173CCF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		62857DA1265643A700173CCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		62857DA2265643A700173CCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		62857DA4265643A700173CCF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1457192B7040EDC41FDA8F20 /* Pods-DamannaFront.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DamannaFront/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = inje.DamannaFront;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		62857DA5265643A700173CCF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDDFAD8D3275CDFE42591372 /* Pods-DamannaFront.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DamannaFront/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = inje.DamannaFront;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		62857D8A265643A600173CCF /* Build configuration list for PBXProject "DamannaFront" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62857DA1265643A700173CCF /* Debug */,
+				62857DA2265643A700173CCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62857DA3265643A700173CCF /* Build configuration list for PBXNativeTarget "DamannaFront" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62857DA4265643A700173CCF /* Debug */,
+				62857DA5265643A700173CCF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 62857D87265643A600173CCF /* Project object */;
+}

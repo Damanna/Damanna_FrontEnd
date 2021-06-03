@@ -1,0 +1,6 @@
+framework module Pods_DamannaFront {
+  umbrella header "Pods-DamannaFront-umbrella.h"
+
+  export *
+  module * { export * }
+}
