@@ -141,18 +141,39 @@ extension ChatViewContoller: StompClientLibDelegate {
         if let contents = jsonBody?["content"] as? String {
             receivedContent = contents
         }
-
-        if receivedName == currentUser.displayName {
-            messages.append(Message(sender: currentUser,
-                                    messageId: "1",
-                                    sentDate: Date(),
-                                    kind: .text(receivedContent)))
+        
+        var receivedType: String = ""
+        if let type = jsonBody?["type"] as? String {
+            receivedType = type
+        }
+        print(receivedType)
+        
+        if receivedType == "CHAT" {
+            if receivedName == currentUser.displayName {
+                messages.append(Message(sender: currentUser,
+                                        messageId: "1",
+                                        sentDate: Date(),
+                                        kind: .text(receivedContent)))
+            } else {
+                otherUser = Sender(senderId: "other", displayName: receivedName)
+                messages.append(Message(sender: otherUser,
+                                        messageId: "1",
+                                        sentDate: Date(),
+                                        kind: .text("Name: \(receivedName)\n\(receivedContent)")))
+            }
         } else {
-            otherUser = Sender(senderId: "other", displayName: receivedName)
-            messages.append(Message(sender: otherUser,
-                                    messageId: "1",
-                                    sentDate: Date(),
-                                    kind: .text("Name: \(receivedName)\n\(receivedContent)")))
+            if receivedName == currentUser.displayName {
+                messages.append(Message(sender: currentUser,
+                                        messageId: "1",
+                                        sentDate: Date(),
+                                        kind: .text(receivedContent)))
+            } else {
+                otherUser = Sender(senderId: "other", displayName: receivedName)
+                messages.append(Message(sender: otherUser,
+                                        messageId: "1",
+                                        sentDate: Date(),
+                                        kind: .text(receivedContent)))
+            }
         }
         
         self.messagesCollectionView.reloadData()
@@ -168,8 +189,9 @@ extension ChatViewContoller: StompClientLibDelegate {
         print(roomTopic)
         socketClient.subscribe(destination: "/topic/" + roomID)
         let subPath = "/app/chat/addUser/" + roomID
-        let sub = subscribeMessage(sender: userName)
-        socketClient.sendJSONForDict(dict: sub.nsDictionary, toDestination: subPath)
+        let sub = ["type": "JOIN", "content": "\(String(describing: userName!))님이 접속하였습니다", "sender": userName!] as NSDictionary
+//        let sub = subscribeMessage(content: "\(String(describing: userName))님이 입장하였습니다!", sender: userName)
+        socketClient.sendJSONForDict(dict: sub, toDestination: subPath)
     }
     
     func serverDidSendReceipt(client: StompClientLib!, withReceiptId receiptId: String) {
