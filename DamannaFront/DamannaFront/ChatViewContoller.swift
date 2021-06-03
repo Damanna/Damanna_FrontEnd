@@ -20,12 +20,22 @@ struct Message: MessageType {
     var messageId: String // Should be Unique
     var sentDate: Date
     var kind: MessageKind // 메시지의 종류 (텍스트, 사진, 비디오, 이모티콘...)
+    
+    let user = Sender(senderId: "self", displayName: "Jason Choi")
+    
+    var dictionary: [String: MessageType]{
+        return ["Message": Message(sender: user, messageId: "1", sentDate: Date(), kind: .text("abc"))]
+    }
+    
+    var nsDictionary : NSDictionary{
+        return dictionary as NSDictionary
+    }
 }
 
 class ChatViewContoller: MessagesViewController, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
     
     // MARK: Stomp로 웹소켓 서버 연결을 위한 metadata
-    let url = NSURL(string: "wss://damanna.herokuapp.com/ws/websocket")
+    let url = NSURL(string: "wss://test-message2.herokuapp.com/ws/websocket")
     let intervalSec = 1.0
     var roomID: String = "temp"
     public var socketClient = StompClientLib()
@@ -35,8 +45,9 @@ class ChatViewContoller: MessagesViewController, MessagesDataSource, MessagesLay
     // AppDelegate 저장소에서 userName 전달 받을 프로퍼티
     var userName: String?
     
-    let currentUser = Sender(senderId: "self", displayName: "Jason Choi")
-    let otherUser = Sender(senderId: "other", displayName: "Ariel Jo")
+    var currentUser = Sender(senderId: "", displayName: "")
+    var otherUser = Sender(senderId: "", displayName: "")
+    
     var messages = [MessageType]()
     
     override func viewDidLoad() {
@@ -44,7 +55,10 @@ class ChatViewContoller: MessagesViewController, MessagesDataSource, MessagesLay
         
         // AppDelegate 저장소에서 userName 전달 받기
         let ad = UIApplication.shared.delegate as? AppDelegate
-        userName = ad?.name
+        self.userName = ad?.name
+        
+        // 내 이름을 currentUser로 저장
+        currentUser = Sender(senderId: "self", displayName: userName!)
         
         // 뷰가 메모리에 로드될 때 stomp client에서 연결 시작 및 초기 설정
         socketClient.openSocketWithURLRequest(request: NSURLRequest(url: url! as URL), delegate: self)
@@ -55,45 +69,15 @@ class ChatViewContoller: MessagesViewController, MessagesDataSource, MessagesLay
         // subscribe 할 때 사용자가 선택한 방 이름 전송
         roomID = roomTopic
         
-        
         // 메시지 입력란 Delegation
         messageInputBar.delegate = self
-        
-        messages.append(Message(sender: currentUser,
-                                messageId: "1",
-                                sentDate: Date().addingTimeInterval(-86400),
-                                kind: .text("Hello World")))
-        
-        messages.append(Message(sender: otherUser,
-                                messageId: "2",
-                                sentDate: Date().addingTimeInterval(-70000),
-                                kind: .text("\(otherUser.displayName)\nHow is it going")))
-        
-        messages.append(Message(sender: currentUser,
-                                messageId: "3",
-                                sentDate: Date().addingTimeInterval(-75000),
-                                kind: .text("Here is a long reply. Here is a long reply. Here is a long reply. Here is a long reply. ")))
-        
-        messages.append(Message(sender: otherUser,
-                                messageId: "4",
-                                sentDate: Date().addingTimeInterval(-50000),
-                                kind: .text("Look it works")))
-        
-        messages.append(Message(sender: currentUser,
-                                messageId: "5",
-                                sentDate: Date().addingTimeInterval(-40000),
-                                kind: .text("I love making Apps. I love making Apps. I love making Apps. I love making Apps. ")))
-        
-        messages.append(Message(sender: otherUser,
-                                messageId: "6",
-                                sentDate: Date().addingTimeInterval(-30000),
-                                kind: .text("And this is the last message!")))
         
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+                
     }
-    
+
     func currentSender() -> SenderType {
         return currentUser
     }
@@ -106,6 +90,7 @@ class ChatViewContoller: MessagesViewController, MessagesDataSource, MessagesLay
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
         return messages.count
     }
+    
 }
 
 // MARK: MessageKit에서 TextField랑 SendButton 다루기
@@ -117,13 +102,11 @@ extension ChatViewContoller: InputBarAccessoryViewDelegate {
             return
         }
         print("Sending: \(text)")
-
+        
         // Send Message
         let sendPath = "/app/chat/sendMessage/" + roomID
-        let tt = chatMessage(sender: userName)
-        socketClient.sendJSONForDict(dict: tt.nsDictionary, toDestination: sendPath)
-        
-        
+        let chat = ["type": "CHAT", "content": text, "sender": userName!] as NSDictionary
+        socketClient.sendJSONForDict(dict: chat, toDestination: sendPath)
     }
 }
 
@@ -136,21 +119,7 @@ extension ChatViewContoller: StompClientLibDelegate {
         var sender: String? = ""
         
         var dictionary: [String: String]{
-            return ["sender" : sender!, "type" : "JOIN"]
-        }
-        
-        var nsDictionary : NSDictionary{
-            return dictionary as NSDictionary
-        }
-    }
-    
-    struct chatMessage : Codable {
-        var type: String? = ""
-        var content: String? = ""
-        var sender: String? = ""
-        
-        var dictionary: [String: Any]{
-            return ["sender" : sender!, "type" : "JOIN"]
+            return ["sender": sender!, "type": "JOIN"]
         }
         
         var nsDictionary : NSDictionary{
@@ -163,13 +132,30 @@ extension ChatViewContoller: StompClientLibDelegate {
         print("Destination : \(destination)")
         print("JSON Body : \(String(describing: jsonBody))")
         
-        var userName: String = ""
+        var receivedName: String = ""
         if let name = jsonBody?["sender"] as? String {
-            userName = name
+            receivedName = name
         }
-        print(userName)
         
-        print("String Body : \(stringBody ?? "nil")")
+        var receivedContent: String = ""
+        if let contents = jsonBody?["content"] as? String {
+            receivedContent = contents
+        }
+
+        if receivedName == currentUser.displayName {
+            messages.append(Message(sender: currentUser,
+                                    messageId: "1",
+                                    sentDate: Date(),
+                                    kind: .text(receivedContent)))
+        } else {
+            otherUser = Sender(senderId: "other", displayName: receivedName)
+            messages.append(Message(sender: otherUser,
+                                    messageId: "1",
+                                    sentDate: Date(),
+                                    kind: .text(receivedContent)))
+        }
+        
+        self.messagesCollectionView.reloadData()
     }
     
     func stompClientDidDisconnect(client: StompClientLib!) {
