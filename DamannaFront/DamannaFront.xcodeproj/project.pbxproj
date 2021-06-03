@@ -10,13 +10,13 @@
 		620BAEB4265FCB39004F7AC1 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620BAEB3265FCB39004F7AC1 /* RoomCell.swift */; };
 		624A36DA266753E700D5B171 /* ChatViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624A36D9266753E700D5B171 /* ChatViewContoller.swift */; };
 		624AD5B6265D06D20029C7E7 /* RoomSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624AD5B5265D06D20029C7E7 /* RoomSelect.swift */; };
-		624AD5BC265D11170029C7E7 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624AD5BB265D11170029C7E7 /* ChatRoom.swift */; };
 		62857D93265643A600173CCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62857D92265643A600173CCF /* AppDelegate.swift */; };
 		62857D95265643A600173CCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62857D94265643A600173CCF /* SceneDelegate.swift */; };
 		62857D97265643A600173CCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62857D96265643A600173CCF /* ViewController.swift */; };
 		62857D9A265643A600173CCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62857D98265643A600173CCF /* Main.storyboard */; };
 		62857D9C265643A700173CCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62857D9B265643A700173CCF /* Assets.xcassets */; };
 		62857D9F265643A700173CCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62857D9D265643A700173CCF /* LaunchScreen.storyboard */; };
+		62A7FE8D2668C11C002FC279 /* RoomVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A7FE8C2668C11C002FC279 /* RoomVO.swift */; };
 		74A34F82E4CBCBFFCF615628 /* Pods_DamannaFront.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3FE2FEC6BD24BE7F640274B /* Pods_DamannaFront.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +25,6 @@
 		620BAEB3265FCB39004F7AC1 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		624A36D9266753E700D5B171 /* ChatViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewContoller.swift; sourceTree = "<group>"; };
 		624AD5B5265D06D20029C7E7 /* RoomSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomSelect.swift; sourceTree = "<group>"; };
-		624AD5BB265D11170029C7E7 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		62857D8F265643A600173CCF /* DamannaFront.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DamannaFront.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62857D92265643A600173CCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62857D94265643A600173CCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +33,7 @@
 		62857D9B265643A700173CCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62857D9E265643A700173CCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62857DA0265643A700173CCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62A7FE8C2668C11C002FC279 /* RoomVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomVO.swift; sourceTree = "<group>"; };
 		B3FE2FEC6BD24BE7F640274B /* Pods_DamannaFront.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DamannaFront.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDDFAD8D3275CDFE42591372 /* Pods-DamannaFront.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DamannaFront.release.xcconfig"; path = "Target Support Files/Pods-DamannaFront/Pods-DamannaFront.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,9 +88,9 @@
 				62857D9D265643A700173CCF /* LaunchScreen.storyboard */,
 				62857DA0265643A700173CCF /* Info.plist */,
 				624AD5B5265D06D20029C7E7 /* RoomSelect.swift */,
-				624AD5BB265D11170029C7E7 /* ChatRoom.swift */,
 				620BAEB3265FCB39004F7AC1 /* RoomCell.swift */,
 				624A36D9266753E700D5B171 /* ChatViewContoller.swift */,
+				62A7FE8C2668C11C002FC279 /* RoomVO.swift */,
 			);
 			path = DamannaFront;
 			sourceTree = "<group>";
@@ -217,7 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				624AD5BC265D11170029C7E7 /* ChatRoom.swift in Sources */,
+				62A7FE8D2668C11C002FC279 /* RoomVO.swift in Sources */,
 				624AD5B6265D06D20029C7E7 /* RoomSelect.swift in Sources */,
 				620BAEB4265FCB39004F7AC1 /* RoomCell.swift in Sources */,
 				62857D97265643A600173CCF /* ViewController.swift in Sources */,

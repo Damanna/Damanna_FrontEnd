@@ -24,4 +24,9 @@ class ViewController: UIViewController {
         ad?.name = self.userName.text!
     }
     
+    @IBAction func kakaoAPI(_ sender: Any) {
+        
+    }
+    
+    
 }
