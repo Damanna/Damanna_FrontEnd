@@ -19,25 +19,25 @@ class RoomSelect: UITableViewController {
     
     override func viewDidLoad() {
         
-        let url: URL! = URL(string: "https://damanna.herokuapp.com/room/read")
-        let dbData = try! Data(contentsOf: url)
-        let log = NSString(data: dbData, encoding: String.Encoding.utf8.rawValue) ?? "No Data"
-        NSLog("API Result = \(log)")
-        
-        do {
-            // DB에서 가져온 json객체를 NSArray로 변환
-            let data = try JSONSerialization.jsonObject(with: dbData, options: []) as! NSArray
-            
-            // 변환한 데이터에서 객체 하나씩 뽑아서 String으로 캐스팅 후 리스트에 추가
-            for row in data {
-                let r = row as! NSDictionary
-                
-                roomList.append(r["roomID"] as! String)
-            }
-            
-        } catch {
-            NSLog("Parse Error!")
-        }
+//        let url: URL! = URL(string: "https://damanna.herokuapp.com/room/read")
+//        let dbData = try! Data(contentsOf: url)
+//        let log = NSString(data: dbData, encoding: String.Encoding.utf8.rawValue) ?? "No Data"
+//        NSLog("API Result = \(log)")
+//
+//        do {
+//            // DB에서 가져온 json객체를 NSArray로 변환
+//            let data = try JSONSerialization.jsonObject(with: dbData, options: []) as! NSArray
+//
+//            // 변환한 데이터에서 객체 하나씩 뽑아서 String으로 캐스팅 후 리스트에 추가
+//            for row in data {
+//                let r = row as! NSDictionary
+//
+//                roomList.append(r["roomID"] as! String)
+//            }
+//
+//        } catch {
+//            NSLog("Parse Error!")
+//        }
     }
     
     // MARK:- 주제 전달
@@ -136,6 +136,26 @@ class RoomSelect: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.estimatedRowHeight = 50
         self.tableView.rowHeight = UITableView.automaticDimension
+        
+        let url: URL! = URL(string: "https://damanna.herokuapp.com/room/read")
+        let dbData = try! Data(contentsOf: url)
+        let log = NSString(data: dbData, encoding: String.Encoding.utf8.rawValue) ?? "No Data"
+        NSLog("API Result = \(log)")
+        
+        do {
+            // DB에서 가져온 json객체를 NSArray로 변환
+            let data = try JSONSerialization.jsonObject(with: dbData, options: []) as! NSArray
+            
+            // 변환한 데이터에서 객체 하나씩 뽑아서 String으로 캐스팅 후 리스트에 추가
+            for row in data {
+                let r = row as! NSDictionary
+                
+                roomList.append(r["roomID"] as! String)
+            }
+            
+        } catch {
+            NSLog("Parse Error!")
+        }
     }
     
     // 선택한 행(방 주제)에 대해 일어나는 event 정의
