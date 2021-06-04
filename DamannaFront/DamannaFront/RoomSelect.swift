@@ -18,19 +18,6 @@ class RoomSelect: UITableViewController {
         let tags: String
     }
     
-    // MARK:- 주제 전달
-    // Segue perform 전에 미리 해야할 일 정의, 선택한 주제 전달
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let dest = segue.destination
-//
-//        // ChatRoom 이름 설정을 위해 주제 전달
-//        guard let chatroomVC = dest as? ChatRoom else {
-//            return
-//        }
-//
-//        chatroomVC.roomTopic = self.topic
-//    }
-    
     @IBAction func addRoom(_ sender: Any) {
         var postRoomID: String = ""
         var postTag: String = ""
@@ -127,7 +114,7 @@ class RoomSelect: UITableViewController {
         return cell
     }
     
-//    테이블 뷰에 행이 하나 추가되어 reload() 되어 뷰가 나타날 떄 cell의 크기를 자동으로 글자 수의 길이에 맞춰 늘림 (근데 없어도 잘 된다..?)
+//    테이블 뷰에 행이 하나 추가되어 reload() 되어 뷰가 나타날 떄 cell의 크기를 자동으로 글자 수의 길이에 맞춰 늘림
     override func viewWillAppear(_ animated: Bool) {
         
         let url: URL! = URL(string: "https://test-message2.herokuapp.com/room/read")

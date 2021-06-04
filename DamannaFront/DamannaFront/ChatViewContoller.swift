@@ -107,6 +107,9 @@ extension ChatViewContoller: InputBarAccessoryViewDelegate {
         let sendPath = "/app/chat/sendMessage/" + roomID
         let chat = ["type": "CHAT", "content": text, "sender": userName!] as NSDictionary
         socketClient.sendJSONForDict(dict: chat, toDestination: sendPath)
+        
+        // Send 버튼 누르면 inputBar 비우기 
+        inputBar.inputTextView.text = ""
     }
 }
 
