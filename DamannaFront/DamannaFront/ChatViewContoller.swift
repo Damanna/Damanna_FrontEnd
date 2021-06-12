@@ -35,7 +35,7 @@ struct Message: MessageType {
 class ChatViewContoller: MessagesViewController, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
     
     // MARK: Stomp로 웹소켓 서버 연결을 위한 metadata
-    let url = NSURL(string: "wss://test-message2.herokuapp.com/ws/websocket")
+    let url = NSURL(string: "wss://damanna.herokuapp.com/ws/websocket")
     let intervalSec = 1.0
     var roomID: String = "temp"
     public var socketClient = StompClientLib()
@@ -110,6 +110,7 @@ extension ChatViewContoller: InputBarAccessoryViewDelegate {
         
         // Send 버튼 누르면 inputBar 비우기 
         inputBar.inputTextView.text = ""
+        messagesCollectionView.scrollToLastItem(animated: true)
     }
 }
 
