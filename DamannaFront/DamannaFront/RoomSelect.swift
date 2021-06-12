@@ -54,7 +54,7 @@ class RoomSelect: UITableViewController {
                 }
                 
                 // POST request 만들기
-                let url: URL! = URL(string: "https://test-message2.herokuapp.com/room/save")
+                let url: URL! = URL(string: "https://damanna.herokuapp.com/room/save")
                 var request = URLRequest(url: url)
                 request.httpMethod = "POST"
                 request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -117,7 +117,7 @@ class RoomSelect: UITableViewController {
 //    테이블 뷰에 행이 하나 추가되어 reload() 되어 뷰가 나타날 떄 cell의 크기를 자동으로 글자 수의 길이에 맞춰 늘림
     override func viewWillAppear(_ animated: Bool) {
         
-        let url: URL! = URL(string: "https://test-message2.herokuapp.com/room/read")
+        let url: URL! = URL(string: "https://damanna.herokuapp.com/room/read")
         let dbData = try! Data(contentsOf: url)
         let log = NSString(data: dbData, encoding: String.Encoding.utf8.rawValue) ?? "No Data"
         NSLog("API Result = \(log)")
