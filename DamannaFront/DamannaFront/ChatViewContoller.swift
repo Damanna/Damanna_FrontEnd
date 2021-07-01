@@ -192,9 +192,8 @@ extension ChatViewContoller: StompClientLibDelegate {
         print("Socket is connected")
         print(roomTopic)
         socketClient.subscribe(destination: "/topic/" + roomID)
-        let subPath = "/app/chat/addUser/" + roomID
+        let subPath = "/app/chat/sendMessage/" + roomID
         let sub = ["type": "JOIN", "content": "\(String(describing: userName!))님이 접속하였습니다", "sender": userName!] as NSDictionary
-//        let sub = subscribeMessage(content: "\(String(describing: userName))님이 입장하였습니다!", sender: userName)
         socketClient.sendJSONForDict(dict: sub, toDestination: subPath)
     }
     
