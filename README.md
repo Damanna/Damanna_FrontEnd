@@ -15,9 +15,9 @@
 > ## 🔨 사용한 API 
 <br>
 <div align='center'>
-    <img src="https://user-images.githubusercontent.com/44153216/124066304-67a6a200-da73-11eb-915c-b655746fba86.png" width="23%"></img>&nbsp;&nbsp;&nbsp;
-    <img src="https://user-images.githubusercontent.com/44153216/124066463-accad400-da73-11eb-94ef-a31ff9573eda.png" width="23%"></img>&nbsp;&nbsp;&nbsp;
-    <img src="https://user-images.githubusercontent.com/44153216/124066636-003d2200-da74-11eb-9951-6eea240fdc27.png" width="23%"></img>
+    <img src="https://user-images.githubusercontent.com/44153216/124066304-67a6a200-da73-11eb-915c-b655746fba86.png" width="15%"></img>&nbsp;&nbsp;&nbsp;
+    <img src="https://user-images.githubusercontent.com/44153216/124066463-accad400-da73-11eb-94ef-a31ff9573eda.png" width="15%"></img>&nbsp;&nbsp;&nbsp;
+    <img src="https://user-images.githubusercontent.com/44153216/124066636-003d2200-da74-11eb-9951-6eea240fdc27.png" width="20%"></img>
 </div>
 <br>
 
@@ -25,7 +25,42 @@
 | 최인제 <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1582581609/noticon/cczbpahp5od6voerbvwr.svg" width="12px;"/> | 이유찬 <img src="https://user-images.githubusercontent.com/44153216/124068070-7beb9e80-da75-11eb-8bad-dcc6ebd3c3ce.png" width="12px;"/>|
 |-----|-----|
 |[@injeChoi](https://github.com/injeChoi)|[@yuchanleeme](https://github.com/yuchanleeme)|
+<br>
 
+# 🏃🏻‍♂️ 실행 방법
+># Frontend Configuration
+## &nbsp;&nbsp;&nbsp;&nbsp;Build on iPhone11 is recommended
+<br>
 
+>## Frontend
+### 1. git clone
+```zsh
+git clone https://github.com/Damanna/Damanna_Frontend.git
+```
+### 2. move directory & pod install 
+```zsh
+cd Damanna_Frontend/DamannaFront
+pod install
+```
+### 3. run xcode & build
+<br><br>
 
-🗓 30/06/2021 ~ing
+># Backend Configuration
+## &nbsp;&nbsp;&nbsp;&nbsp;./src/main/resources/application.properties
+```properties
+...
+spring.data.mongodb.uri=${MONGODB_URI}              // MongoDB URI
+spring.data.mongodb.database=${MONGODB_DATABASE}    // Target MongoDB Database Name
+...
+```
+>## Backend
+### 1. git clone
+```bash
+git clone https://github.com/Damanna/Damanna_Backend.git
+```
+### 2. move directory & build
+```
+cd Damanna_Backend
+gradle build
+```
+
