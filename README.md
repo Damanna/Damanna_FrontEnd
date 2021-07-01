@@ -27,12 +27,28 @@
 |[@injeChoi](https://github.com/injeChoi)|[@yuchanleeme](https://github.com/yuchanleeme)|
 <br>
 
-# 🏃🏻‍♂️ 실행 방법
-># Frontend Configuration
-## &nbsp;&nbsp;&nbsp;&nbsp;Build on iPhone11 is recommended
+# 🏛 프로젝트 아키텍처
+<div align='center'>
+    <img src="https://user-images.githubusercontent.com/44153216/124071817-e8b56780-da7a-11eb-8a5a-908ec5a6bf22.png" width="50%"/>
+</div>
 <br>
 
->## Frontend
+## API URI
+|번호|유형|URI|설명|
+|:---|:---|:---|:---|
+|1|GET|/room/read| MongoDB에 Database에 있는 방의 정보를 조회|
+|2|POST|/room/save| 방의 정보를 MongoDB에 저장|
+|3|Message| /topic/{roomID}| {roomID}를 기준으로 구독|
+|4|Message| /chat/sendMessage/{roomID}|{roomID}구독자에게 메세지를 전송|
+
+<br><br>
+
+# 🏃🏻‍♂️ 실행 방법
+>## Frontend Configuration
+## &nbsp;&nbsp;&nbsp;&nbsp;*Build on iPhone11 is recommended*
+<br>
+
+>## Frontend Installation & Build
 ### 1. git clone
 ```zsh
 git clone https://github.com/Damanna/Damanna_Frontend.git
@@ -45,22 +61,5 @@ pod install
 ### 3. run xcode & build
 <br><br>
 
-># Backend Configuration
-## &nbsp;&nbsp;&nbsp;&nbsp;./src/main/resources/application.properties
-```properties
-...
-spring.data.mongodb.uri=${MONGODB_URI}              // MongoDB URI
-spring.data.mongodb.database=${MONGODB_DATABASE}    // Target MongoDB Database Name
-...
-```
->## Backend
-### 1. git clone
-```bash
-git clone https://github.com/Damanna/Damanna_Backend.git
-```
-### 2. move directory & build
-```
-cd Damanna_Backend
-gradle build
-```
-
+>## Backend Installation & Build
+&nbsp;&nbsp;&nbsp;&nbsp;[@Damanna_Backend_Link](https://github.com/Damanna/Damanna_Backend.git)
